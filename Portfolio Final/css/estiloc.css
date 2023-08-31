@@ -1,0 +1,238 @@
+:root{
+    --primary-color: #4488ee;
+    --bg-color: #111311;
+    --mode-color: #fffff1;
+    --bg-card-color: #222222;
+    --transition:color 0.1s,background-color 0.2s ease-in-out;
+    --border-radius:.4em;
+    --sub-title-size:1.5em;
+    --skills-bar-length:0%;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+body{
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--mode-color);
+    transition: var(--transition);
+}
+body.light{
+    --bg-color: #eeeee1;
+    --mode-color: #111311;
+    --bg-card-color: #dddddd; 
+}
+.card{
+    color: var(--mode-color);
+    background: var(--bg-card-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    line-height: 1.5;
+    
+}
+.navbar{
+    background-color: var(--bg-card-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    padding: 0 1.5em;
+}
+.modo-container{
+    display: flex;
+}
+.modo{
+    margin: 5px 15px;
+    cursor: pointer;
+}
+.icono{
+    max-height: 20px;
+}
+
+.colors{
+    display: flex;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.color{
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid var(--mode-color);
+}
+
+.color:hover{
+   zoom: 110%;
+}
+.color1{
+    background-color: #4488ee;
+}
+.color2{
+    background-color: #6F1714;
+}
+.color3{
+    background-color:#ED2F2A ;
+}
+.color4{
+    background-color: #1E62EF;
+}
+.color5{
+    background-color:#0036A1 ;
+}
+.color6{
+    background-color: #178ADD;
+}
+.color7{
+    background-color: #65DB61;
+}
+.color8{
+    background-color: #5BA812;
+}
+.color9{
+    background-color: #A847F6;
+}
+.color10{
+    background-color:#59085A ;
+}
+.color11{
+    background-color:#A40EB9 ;
+}
+.color12{
+    background-color:#E9C1D3 ;
+}
+.color13{
+    background-color: #A25EC3;
+}
+
+.main{
+    display: grid;
+    padding: 2em;
+    gap: .5em;
+    width: auto;
+    max-width: 100%;
+}
+
+@media screen and (min-width:721px){
+    .main{
+        grid-template-columns: min-content 1fr;
+    }
+}
+.foto__container{
+    width: 320px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.foto{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.card__title{
+    margin: 15px .5em;
+    font-size: x-large
+}
+.card__subtitle{
+    margin: 15px .5em;
+    font-size: large;
+}
+.card__link{
+    margin: 15px .5em;
+}
+.link__color{
+    color: var(--primary-color);
+}
+.hobbies{
+    border: 2px solid var(--primary-color);
+    padding: 8px;
+    margin: 15px 0;
+}
+.column{
+    display: grid;
+    gap: .5em;
+}
+.column-right{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,min-content);
+    display: grid;
+    gap: 0.5em;
+    align-items: start;
+}
+@media screen and (max-width:720px){
+   section{
+    width: 350px;
+   }
+   .column-right{
+    grid-template-columns: 1fr;
+   }
+}
+
+.skills{
+    padding:1em 0;
+}
+.skills__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.skills__bar,
+.skills__bar::after{
+    position: relative;
+    width: 175px;
+    height: 8px;
+    background-color: #888888;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.skills__bar::after{
+    content: '';
+    position: absolute;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    left: -175px;
+    animation: skills-bar-fill 2s ease-in-out forwards;
+}
+.skills__bar--20::after{
+    --skills-bar-length: 20%;
+}
+.skills__bar--30::after{
+    --skills-bar-length: 30%;
+}
+.skills__bar--40::after{
+    --skills-bar-length: 40%;
+}
+.skills__bar--50::after{
+    --skills-bar-length: 50%;
+}
+.skills__bar--60::after{
+    --skills-bar-length: 60%;
+}
+.skills__bar--70::after{
+    --skills-bar-length: 70%;
+}
+.skills__bar--80::after{
+    --skills-bar-length: 80%;
+}
+.skills__bar--90::after{
+    --skills-bar-length: 90%;
+}
+.skills__bar--100::after{
+    --skills-bar-length: 100%;
+}
+
+@keyframes skills-bar-fill {
+    to{
+        transform: translateX(var(--skills-bar-length));
+    }
+}
+

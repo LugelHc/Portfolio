@@ -1,0 +1,10 @@
+{
+    "colores":{
+        "blanco":"#F9EBEA",
+        "rosado":"#F6CEF5",
+        "purpura":"hsl(276,84%,56%)",
+        "naranja":"hsl(46,84%,56%)",
+        "aqua":"hsl(180,100%,50%)",
+        "rojo":"#f00"
+    }
+}
