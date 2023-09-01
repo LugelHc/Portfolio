@@ -4,14 +4,12 @@ const icono = document.getElementById("icono");
 
 
 
-modo.addEventListener("click",()=>{
+modo.addEventListener("click", () => {
     document.body.classList.toggle("light");
-    if(icono.src.includes("luna.png")){
-        icono.src = "./assets/icons/soleado.png";
-        modo.textContent="Light mode";
+    if (modo.innerHTML == "Dark mode") {
+        modo.innerHTML = "Light mode";
     } else {
-        icono.src = "./assets/icons/luna.png"
-        modo.textContent = "Dark mode"
+        modo.innerHTML = "Dark mode";
     }
 });
 // ------------------------------------------------ParteConJson-------------------------------------------//
@@ -29,3 +27,4 @@ fetch('./json/colores/colore.json')
     });
     
 })
+s
