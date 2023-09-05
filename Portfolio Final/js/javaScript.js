@@ -41,7 +41,7 @@ fetch('./json/colores/colore.json')
     .catch(error => {
         console.error("Error al cargar el archivo JSON:", error);
     });
-if (window.innerWidth<=720){
+if (screen.width<=720){
     x.style.display = "none"
 }
 boton.addEventListener("click",()=>{
