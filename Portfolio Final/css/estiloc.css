@@ -75,7 +75,6 @@ body.light{
 }
 .xEstilo{
     border: none;
-    display: none;
 }
 .xEstilo::after{
     position: absolute;
