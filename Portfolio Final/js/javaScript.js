@@ -1,8 +1,10 @@
 const modo = document.getElementById("modo");
 const navbar =  document.getElementById("navbar");
 const icono = document.getElementById("icono");
-
-
+const boton = document.getElementById("boton__responsive")
+const modal = document.getElementById("modal")
+const barraColores = document.getElementById("colors")
+const x = document.getElementById("x")
 
 modo.addEventListener("click", () => {
     document.body.classList.toggle("light");
@@ -12,7 +14,7 @@ modo.addEventListener("click", () => {
         modo.innerHTML = "Dark mode";
     }
 });
-// ------------------------------------------------ParteConJson-------------------------------------------//
+
 fetch('./json/colores/colore.json')
 .then(Response => Response.json())
 .then(data =>{
@@ -25,6 +27,14 @@ fetch('./json/colores/colore.json')
     colores.addEventListener("click",(e)=>{
         cambiarColor(e.target.dataset.color)
     });
-    
 })
-s
+boton.addEventListener("click",()=>{
+    modal.style.opacity = 1
+    modal.style.pointerEvents = "auto"
+    x.style.opacity = 1
+});
+x.addEventListener("click",()=>{
+    modal.style.opacity = 0
+    modal.style.pointerEvents = "none"
+})
+

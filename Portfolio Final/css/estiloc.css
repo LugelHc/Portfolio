@@ -57,18 +57,33 @@ body.light{
     max-height: 20px;
 }
 
+.imagen__boton{
+    height: 30px;
+}
+.boton__responsive{
+    display: none;
+}
 .colors{
     display: flex;
     cursor: pointer;
     transition: var(--transition);
-
 }
-.color{
+.color{ 
     width: 25px;
     height: 25px;
     border: 1.5px solid var(--mode-color);
 }
-
+.xEstilo{
+    border: none;
+    opacity: 0;
+}
+.xEstilo::after{
+    position: absolute;
+    content: "\274c";
+    font-size: 18px; 
+    color: #FFF;
+    text-align: center;
+}
 .color:hover{
    zoom: 110%;
 }
@@ -164,19 +179,36 @@ body.light{
     grid-auto-rows: min-content;
     grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
 }
+
 @media screen and (min-width:1850px){
     .column-right{grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));}
 }
 @media screen and (max-width:720px){
 
    .column-right{
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
    }
-   .colors{
-    display: none;
-    width: 75px;
-    flex-wrap: wrap;
+   .modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; 
+        background: #111111bd;
+        opacity: 0;
+        pointer-events: none;  
+        transition: opacity .6s;
     }
+    .colors {
+       height:100% ;
+       align-items: center;
+       justify-content: center;
+    }
+    .boton__responsive{
+        order: 1000;
+        display: block;
+    }
+
 }
 
 .skills{
