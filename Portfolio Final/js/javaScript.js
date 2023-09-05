@@ -41,9 +41,16 @@ fetch('./json/colores/colore.json')
     .catch(error => {
         console.error("Error al cargar el archivo JSON:", error);
     });
-if (screen.width>720){
-    x.style.display = "none"
+function verificarTamañoPantalla() {
+    if (document.documentElement.clientWidth > 700) {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
 }
+verificarTamañoPantalla();
+
+window.addEventListener("resize", verificarTamañoPantalla);
 boton.addEventListener("click",()=>{
     modal.style.opacity = 1
     modal.style.pointerEvents = "auto"
