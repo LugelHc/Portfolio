@@ -202,6 +202,7 @@ body.light{
     }
     .colors {
        justify-content: center;
+       margin-top: 25%;
     }
     .boton__responsive{
         order: 1000;
