@@ -49,7 +49,6 @@ function verificarTamañoPantalla() {
     }
 }
 verificarTamañoPantalla();
-
 window.addEventListener("resize", verificarTamañoPantalla);
 boton.addEventListener("click",()=>{
     modal.style.opacity = 1
