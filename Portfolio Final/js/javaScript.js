@@ -42,10 +42,14 @@ fetch('./json/colores/colore.json')
         console.error("Error al cargar el archivo JSON:", error);
     });
 function verificarTamañoPantalla() {
-    if (document.documentElement.clientWidth > 700) {
+    if (document.documentElement.clientWidth >= 710) {
         x.style.display = "none";
+        modal.style.opacity = 1
+   
     } else {
         x.style.display = "block";
+        modal.style.pointerEvents = "none"
+        modal.style.opacity = 0
     }
 }
 verificarTamañoPantalla();
