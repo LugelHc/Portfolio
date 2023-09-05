@@ -75,7 +75,7 @@ body.light{
 }
 .xEstilo{
     border: none;
-    opacity: 0;
+    display: none;
 }
 .xEstilo::after{
     position: absolute;
@@ -180,6 +180,7 @@ body.light{
     grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
 }
 
+
 @media screen and (min-width:1850px){
     .column-right{grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));}
 }
@@ -197,18 +198,15 @@ body.light{
         background: #111111bd;
         opacity: 0;
         pointer-events: none;  
-        transition: opacity .6s;
+        transition: opacity var(--transition);
     }
     .colors {
-       height:100% ;
-       align-items: center;
        justify-content: center;
     }
     .boton__responsive{
         order: 1000;
         display: block;
     }
-
 }
 
 .skills{
