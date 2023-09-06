@@ -6,9 +6,10 @@ const modal = document.getElementById("modal")
 const barraColores = document.getElementById("colors")
 const x = document.getElementById("x")
 
+localStorage.setItem("modo","Dark mode")
 modo.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    if (modo.innerHTML == "Dark mode") {
+    document.body.classList.toggle("light")
+    if (modo == "Dark mode") {
         modo.innerHTML = "Light mode";
     } else {
         modo.innerHTML = "Dark mode";
@@ -45,6 +46,7 @@ function verificarTamañoPantalla() {
     if (document.documentElement.clientWidth >= 710) {
         x.style.display = "none";
         modal.style.opacity = 1
+        modal.style.pointerEvents = "auto"
    
     } else {
         x.style.display = "block";
@@ -54,6 +56,8 @@ function verificarTamañoPantalla() {
 }
 verificarTamañoPantalla();
 window.addEventListener("resize", verificarTamañoPantalla);
+
+
 boton.addEventListener("click",()=>{
     modal.style.opacity = 1
     modal.style.pointerEvents = "auto"

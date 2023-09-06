@@ -20,6 +20,7 @@ img{
 a{
     text-decoration: none;
     cursor: pointer;
+    color: var(--primary-color);
 }
 body{
     margin: 0;
@@ -28,9 +29,9 @@ body{
     transition: var(--transition);
 }
 body.light{
-    --bg-color: #eeeee1;
+    --bg-color: #fafbfb;
     --mode-color: #111311;
-    --bg-card-color: #dddddd; 
+    --bg-card-color:  #f1f1f1;
 }
 .card{
     color: var(--mode-color);
@@ -38,7 +39,6 @@ body.light{
     padding: 10px;
     border-radius: var(--border-radius);
     line-height: 1.5;
-    
 }
 .navbar{
     background-color: var(--bg-card-color);
@@ -133,24 +133,47 @@ body.light{
     width: auto;
     max-width: 100%;
 }
-
+.project{
+    position: relative;
+}
 @media screen and (min-width:720px){
     .main{
         grid-template-columns: min-content 1fr;
     }
+    .card--project{
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-column:  1/-1;
+    }
+    .project {
+        margin-left: 2em;
+        line-height: 2  ;
+    }
+    .project__tags{
+        width: 325px;
+        font-size: .8rem;
+    }
+    .buttons{
+        position: absolute;
+        bottom: 1em;
+    }
 }
 .foto__container{
-    min-width: 320px;
+    min-width: 300px;
     border-radius: var(--border-radius);
     overflow: hidden;
+    width: 100%;
 }
 .foto{
     display: block;
     height: 100%;
     width: 100%;
 }
+.card__text{
+    font-size: large;
+}
 .card__title{
-    margin: 15px .5em;
+    margin: 15px 0;
     font-size: x-large
 }
 .card__subtitle{
@@ -159,9 +182,6 @@ body.light{
 }
 .card__link{
     margin: 15px .5em;
-}
-.link__color{
-    color: var(--primary-color);
 }
 .hobbies{
     border: 2px solid var(--primary-color);
@@ -207,6 +227,7 @@ body.light{
         order: 1000;
         display: block;
     }
+   
 }
 
 .skills{
@@ -263,7 +284,33 @@ body.light{
 .skills__bar--100::after{
     --skills-bar-length: 100%;
 }
-
+.project__tags{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    font-size: .6rem;
+    width: 275px;
+}
+.project__tag{
+    padding: .4em .8em;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 225px;
+}
+.button{
+    width: 100px;
+    line-height: 2.5;
+    text-align: center;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    background-color: var(--primary-color);
+    color: var(--bg-card-color);
+}
 @keyframes skills-bar-fill {
     to{
         transform: translateX(var(--skills-bar-length));
