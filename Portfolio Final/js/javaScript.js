@@ -6,16 +6,15 @@ const modal = document.getElementById("modal")
 const barraColores = document.getElementById("colors")
 const x = document.getElementById("x")
 
-localStorage.setItem("modo","Dark mode")
 modo.addEventListener("click", () => {
     document.body.classList.toggle("light")
-    if (modo == "Dark mode") {
+    if (modo.innerHTML == "Dark mode") {
         modo.innerHTML = "Light mode";
     } else {
         modo.innerHTML = "Dark mode";
     }
 });
-const defaultColor = "#000000";
+const defaultColor = "#222222";
 fetch('./json/colores/colore.json')
     .then(response => response.json())
     .then(data => {

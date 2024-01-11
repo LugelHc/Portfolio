@@ -49,9 +49,16 @@ body.light{
     height: 75px;
     padding: 0 1.5em;
 }
+.modo-container{
+    display: flex;
+}
 .modo{
     margin: 5px 15px;
     cursor: pointer;
+}
+.mode_img{
+    width: 25px;
+    height: 25px
 }
 .icono{
     max-height: 20px;
@@ -62,6 +69,7 @@ body.light{
 }
 .boton__responsive{
     display: none;
+    cursor: pointer;
 }
 .colors{
     display: flex;
@@ -136,17 +144,24 @@ body.light{
 .project{
     position: relative;
 }
-@media screen and (min-width:720px){
+.card--project{
+    grid-column: 1/-1;
+}
+.card__text-project{
+    margin-bottom: 40px;
+}
+
+
+@media screen and (min-width:1018px){
     .main{
         grid-template-columns: min-content 1fr;
     }
     .card--project{
         display: grid;
         grid-template-columns: min-content 1fr;
-        grid-column:  1/-1;
     }
     .project {
-        margin-left: 2em;
+        margin-left: 2em;   
         line-height: 2  ;
     }
     .project__tags{
@@ -154,16 +169,17 @@ body.light{
         font-size: .8rem;
     }
     .buttons{
+        bottom: 0;
         position: absolute;
-        bottom: 1em;
     }
-}
-.foto__container{
+    .foto__container,.project-foto__container{
     min-width: 300px;
+    min-height: 300px;
     border-radius: var(--border-radius);
     overflow: hidden;
     width: 100%;
 }
+}   
 .foto{
     display: block;
     height: 100%;
@@ -172,8 +188,10 @@ body.light{
 .card__text{
     font-size: large;
 }
-.card__title{
-    margin: 15px 0;
+.card__title--presentation{
+    margin: 15px .4em;
+}
+.card__title,.card__title--presentation{
     font-size: x-large
 }
 .card__subtitle{
@@ -191,11 +209,10 @@ body.light{
 .column{
     display: grid;
     gap: .5em;
+    grid-auto-rows: min-content;
 }
 .column-right{
-    display: grid;
     gap: 1rem;
-    grid-auto-rows: min-content;
     grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
 }
 
@@ -226,6 +243,7 @@ body.light{
     .boton__responsive{
         order: 1000;
         display: block;
+        
     }
    
 }
@@ -297,19 +315,24 @@ body.light{
     background-color: var(--primary-color);
     color: var(--bg-color);
 }
+
 .buttons{
     display: flex;
-    justify-content: space-between;
     width: 225px;
 }
+
 .button{
-    width: 100px;
+    width: 100%;
     line-height: 2.5;
     text-align: center;
     border-radius: var(--border-radius);
     transition: var(--transition);
     background-color: var(--primary-color);
     color: var(--bg-card-color);
+}
+.button:hover{
+    filter: brightness(1.75);
+
 }
 @keyframes skills-bar-fill {
     to{
