@@ -8,10 +8,10 @@ const x = document.getElementById("x")
 
 modo.addEventListener("click", () => {
     document.body.classList.toggle("light")
-    if (modo.innerHTML == "Dark mode") {
-        modo.innerHTML = "Light mode";
+    if (modo.innerHTML == "Modo oscuro") {
+        modo.innerHTML = "Modo claro";
     } else {
-        modo.innerHTML = "Dark mode";
+        modo.innerHTML = "Modo oscuro";
     }
 });
 const defaultColor = "#4488ee";
