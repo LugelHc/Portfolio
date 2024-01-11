@@ -14,7 +14,7 @@ modo.addEventListener("click", () => {
         modo.innerHTML = "Dark mode";
     }
 });
-const defaultColor = "#222222";
+const defaultColor = "#4488ee";
 fetch('./json/colores/colore.json')
     .then(response => response.json())
     .then(data => {
